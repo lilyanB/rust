@@ -32,8 +32,19 @@ fn main() -> io::Result<()> {
             }
         }
     }
-
     println!("Total result: {:?}", result);
+
+    let mut result2 = 0;
+    for (_, value) in first_column.iter().enumerate() {
+        for (_, value2) in second_column.iter().enumerate() {
+            let mut some = 0;
+            if value == value2 {
+                some += 1;
+            }
+            result2 += value * some;
+        }
+    }
+    println!("Total result2: {:?}", result2);
 
     Ok(())
 }
